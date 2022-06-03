@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/0ab370c1f3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <main>
+    <nav>
+      <div class="side-btn">
+        <div class="logo"><i class="fa-solid fa-baby"></i></div>
+        <div class="home-btn">
+          <a href="/home" class="nav-links">
+            <i class="fa-solid fa-house"></i>
+            Home
+          </a>
+          </div>
+        <div class="profile-btn">
+          <a href="/<%= loggedInUser.handle %>" class="nav-links">
+          <i class="fa-solid fa-user"></i>
+          Profile
+          </a>
+          </div>
+        <div class="todd-btn">Todd</div>
+      </div>
+      <form action="/logout" method="post" class="logout-form">
+        <input type="hidden" name="_method" value="delete">
+        <button class="logout-btn">
+        <div class="account">
+        <img src=<%= loggedInUser.pfp %> alt="" class="pfp">
+        <div class="account-details">
+          <div class="account-name">
+            <%= loggedInUser.name %>
+            <span class="logout-span">
+              <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            </span>
+          </div>
+          <div class="handle">@<%= loggedInUser.handle %></div>
+        </div>
+        </div>
+        </button>
+      </form>
+      </div>
+    </nav>
+
+    <%- body %>
+
+
+    <aside class="widgets">
+      <input type="text" class="search-bar" placeholder="Search Toddle">
+      <div class="recommended">
+        <div class="to-follow">Who to Follow</div>
+        <a href="realDonaldTrump">
+        <div class="rec">
+          <img src="https://pbs.twimg.com/profile_images/736392853992001537/eF4LJLkn_400x400.jpg" alt="" class="pfp">
+          <div class="side-wrapper">
+          <div class="account-details">
+            <div class="account-name">Donald</div>
+            <div class="handle">@realDonaldTrump</div>
+          </div>
+          <button class="side-follow-btn">Follow</button>
+          </div>
+        </div>
+        </a>
+
+        <a href="/elonmusk">
+        <div class="rec">
+          <img src="https://pbs.twimg.com/profile_images/1529956155937759233/Nyn1HZWF_400x400.jpg" alt="" class="pfp">
+          <div class="side-wrapper">
+          <div class="account-details">
+            <div class="account-name">Elon</div>
+            <div class="handle">@elonmusk</div>
+          </div>
+          <button class="side-follow-btn">Follow</button>
+          </div>
+        </div>
+        </a>
+
+        <a href="/jack" class="link">
+        <div class="rec">
+          <img src="https://pbs.twimg.com/profile_images/1115644092329758721/AFjOr-K8_400x400.jpg" alt="" class="pfp">
+          <div class="side-wrapper">
+          <div class="account-details">
+            <div class="account-name">Jack</div>
+            <div class="handle">@jack</div>
+          </div>
+          <button class="side-follow-btn">Follow</button>
+          </div>
+        </div>
+        </a>
+
+        <a href="/tim_cook" class="link">
+        <div class="rec">
+          <img src="https://pbs.twimg.com/profile_images/1403556543098916872/83tVAzyy_400x400.jpg" alt="" class="pfp">
+          <div class="side-wrapper">
+          <div class="account-details">
+            <div class="account-name">Tim</div>
+            <div class="handle">@tim_cook</div>
+          </div>
+          <button class="side-follow-btn">Follow</button>
+          </div>
+        </div>
+        </a>
+      </div>
+    </aside>
+  </main>
+</body>
+</html>
+

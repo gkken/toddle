@@ -1,0 +1,87 @@
+<div class="feed">
+  <form action="/edit-profile" class="edit-profile-form" method="post">
+     <div class="edit-profile-msg">Edit profile
+       <i class="fa-solid fa-xmark"></i>
+     </div>
+    <input type="text" class="edit-name" placeholder="Name" name="name" maxlength="160" value=<%= profile.name %> required>
+    <textarea name="bio" class="edit-bio" placeholder="Bio" id="" cols="5" rows="4" maxlength="160"><%= profile.bio %></textarea>
+    <input type="text" class="edit-pfp" placeholder="Image URL" name="pfp" value=<%= profile.pfp %> required>
+    <input type="hidden" name="handle" value=<%= profile.handle %>>
+    <button class="save-btn">Save</button>
+  </form>
+   <div class="page-name">
+     <div class="username"><%= profile.name %></div>
+     <div class="todd_count"><%= profile.todd_count %> Todds</div>
+   </div>
+   <div class="profile-body">
+     <div class="user-info">
+        <div class="profile-pfp">
+          <img src=<%= profile.pfp %> alt="" class="mid-pfp">
+        </div>
+        <div class="name">
+          <div class="username"><%= profile.name %>
+            <div class="handle">@<%= profile.handle %></div>
+          </div>
+          <form action="/follow-unfollow" class="generic-form" method="post">
+            <% if (Number(currentUserId) === currentViewUserId) { %>
+              <div class="edit-btn">Edit Profile</div>
+            <% } else if (following.includes(currentViewUserId)) { %>
+              <input type="hidden" name="_method" value="delete">
+              <input type="hidden" name="id" value="<%= currentViewUserId %>">
+              <input type="hidden" name="handle" value="<%= profile.handle %>">
+              <button class="following-btn">Following</button>
+            <% } else { %>
+              <input type="hidden" name="id" value="<%= currentViewUserId  %>">
+              <input type="hidden" name="handle" value="<%= profile.handle %>">
+              <button class="follow-btn">Follow</button>
+            <% } %>
+          </form>
+        </div>
+        <div class="bio"><%= profile.bio %></div>
+        <div class="follow-info">
+          <span class="following-count"> <%= profile.following_count %><span class="following-txt">Following</span> </span>
+          <span class="follower-count"> <%= profile.follower_count %><span class="follower-txt">Followers</span></span>
+        </div>
+     </div>
+   </div>
+   <div class="feed-header">
+     <button class="todds">Todds</button>
+     <button class="replies">Todds & Replies</button>
+     <button class="media">Media</button>
+     <button class="likes">Likes</button>
+   </div>
+   <div class="scrolling-feed">
+    <% for (let todd of todds) { %>
+      <div class="post">
+      <a href="/<%= todd.handle %>" class="link-post">
+        <img src="<%= todd.pfp %>" alt="" class="pfp">
+      </a>
+      <div class="post-body">
+        <a href="/<%= todd.handle %>" class="link-post">
+          <span class="post-name"><%= todd.name %></span>
+          <span class="handle">@<%= todd.handle %></span>
+        </a>
+        <div class="post-text">
+         <span class="baby" data-id="<%= todd.tweetid %>"><%= todd.baby_todd_txt %></span>
+         <span class="normal hidden" data-id="<%= todd.tweetid %>"><%= todd.normal_todd_txt %></span>
+       </div>
+       <div class="translate" data-id="<%= todd.tweetid %>">Translate Todd</div>
+        <footer class="post-footer">
+          <form action="" class="reply">
+            <i class="fa-solid fa-comment"></i>
+          </form>
+          <form action="" class="retodd">
+            <i class="fa-solid fa-retweet"></i>
+          </form>
+          <form action="" class="like">
+            <i class="fa-solid fa-heart"></i>
+          </form>
+          <i class="fa-solid fa-arrow-up-from-bracket"></i>
+        </footer>
+      </div>
+     </div>
+     <% } %>
+   </div>
+</div>
+<script src="script2.js"></script>
+<script src="/script.js"></script>

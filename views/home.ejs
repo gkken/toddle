@@ -1,0 +1,45 @@
+<div class="feed">
+   <div class="page-name">Home</div>
+   <div class="todd-body">
+     <img src=<%= loggedInUser.pfp %> alt="" class="pfp">
+     <form action="/todd" class="compose-todd" method="post">
+       <textarea name="todd" id="1" cols="30" rows="3" class="typing-area" placeholder="What's happening?" maxlength="280" required></textarea>
+       <input type="hidden" name="userid" value =<%= currentUserId %>>
+       <button class="feed-todd-btn">Todd</button>
+     </form>
+   </div>
+   <div class="scrolling-feed">
+     <% for (let user of users) { %>
+       <div class="post">
+        <a href="/<%= user.handle %>" class="link-post">  
+       <img src="<%= user.pfp %>" alt="" class="pfp">
+       </a>
+       <div class="post-body">
+         <a href="/<%= user.handle %>" class="link-post">
+         <span class="post-name"><%= user.name %></span>
+         <span class="handle"><%= user.handle %></span>
+         </a>
+         <div class="post-text">
+           <span class="baby" data-id="<%= user.tweetid %>"><%= user.baby_todd_txt %></span>
+           <span class="normal hidden" data-id="<%= user.tweetid %>"><%= user.normal_todd_txt %></span>
+          </div>
+         <div class="translate" data-id="<%= user.tweetid %>">Translate Todd</div>
+         <footer class="post-footer">
+           <form action="" class="reply">
+             <i class="fa-solid fa-comment"></i>
+           </form>
+           <form action="" class="retodd">
+             <i class="fa-solid fa-retweet"></i>
+           </form>
+           <form action="" class="like">
+             <i class="fa-solid fa-heart"></i>
+           </form>
+           <i class="fa-solid fa-arrow-up-from-bracket"></i>
+         </footer>
+       </div>
+     </div>
+     </a>
+   <% } %>
+   </div>
+</div>
+<script src="script2.js"></script>
