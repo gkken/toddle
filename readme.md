@@ -89,7 +89,6 @@ By looking at a Tweet, the following was identified as necessary data to be stor
 | followeeId | followerId |
 | -----------|------------|
 | 1          | 2          |
-|            |            |
 
 - user with userId:1 follows another user with userId: 3 and userId: 4:
 
@@ -98,7 +97,6 @@ By looking at a Tweet, the following was identified as necessary data to be stor
 | 1          | 2          |
 | 1          | 3          |
 | 1          | 4          |
-|            |            |
 
 ### Displaying Relevant Todds
 - With the above table, it is just a matter of joining the `user` table, the `todds` table and the `follower/followee` table and selecting the relevant data filtered by `followeeId = {user's ID}`
