@@ -6,19 +6,19 @@ A simplified Twitter clone where a Todd (Tweet equivalent) will be posted in bab
 
 ### 1. Sign-up page for new users and login page with authorization flow
 
-<img src="./authorisationFlow.gif" width="1000" height='800'>
+<img src="./authorisationFlow.gif" width="830" height='630'>
 
 ### 2. Post Todds which are automatically converted to baby speak, with a toggleable translation to translate baby speak back to normal text
 
-<img src="./postAndTranslate.gif" width="1000" height='800'>
+<img src="./postAndTranslate.gif" width="830" height='630'>
 
 ### 3. Following and unfollow other users and viewing Todds posted by followed users on home feed
 
-<img src="./followUnfollow.gif" width="1000" height='800'>
+<img src="./followUnfollow.gif" width="830" height='630'>
 
 ### 4. Edit user profile
 
-<img src="./editProfile.gif" width="1000" height='800'>
+<img src="./editProfile.gif" width="830" height='630'>
 
 # Built With
 
