@@ -1,22 +1,24 @@
-*{
+* {
   /* border: 1px solid red; */
 }
 
-html, body{
+html,
+body {
   height: 100%;
 }
 
 body {
   /* background-color: #15202b; */
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+    Helvetica, Arial, "Lucida Grande", sans-serif;
   box-sizing: border-box;
 }
 
-.sign-in-box{
+.sign-in-box {
   width: 600px;
   height: 600px;
   position: absolute;
-  top:0;
+  top: 0;
   bottom: 0;
   left: 0;
   right: 0;
@@ -30,7 +32,7 @@ body {
   margin-bottom: 20px;
 }
 
-.fa-baby{
+.fa-baby {
   font-size: 45px;
   color: #1d9bf0;
 }
@@ -55,7 +57,6 @@ body {
   margin-bottom: 6px;
 }
 
-
 .next-btn {
   width: 274px;
   height: 40px;
@@ -69,7 +70,7 @@ body {
   margin-bottom: 15px;
 }
 
-.next-btn:hover{
+.next-btn:hover {
   background-color: #1a85cd;
 }
 

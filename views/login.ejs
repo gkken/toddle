@@ -1,30 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="login.css">
-  <script src="https://kit.fontawesome.com/0ab370c1f3.js" crossorigin="anonymous"></script>
-</head>
-<body>
-  <div class="main">
-    <div class="sign-in-box">
-      <div class="logo">
-        <i class="fa-solid fa-baby"></i>
-      </div>
-      <div class="sign-in-msg">Sign in to Toddle</div>
-      <form action="/" class="sign-in-form" method="post">
-        <input type="text" class="username" placeholder="Enter your username" name="username" autofocus>
-        <div class="login-error"><%= error %></div>
-        <button class="next-btn">Next</button>
-      </form>
-      <button class="forget-pw">Forgot Password?</button>
-      <div class="sign-up">Don't have an account? 
-        <a href="/sign-up">Sign Up</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log in to Toddle</title>
+    <link rel="stylesheet" href="login.css" />
+    <script
+      src="https://kit.fontawesome.com/0ab370c1f3.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="sign-in-box">
+        <div class="logo">
+          <i class="fa-solid fa-baby"></i>
+        </div>
+        <div class="sign-in-msg">Sign in to Toddle</div>
+        <form action="/" class="sign-in-form" method="post">
+          <input
+            type="text"
+            class="username"
+            placeholder="Enter your username"
+            name="username"
+            autofocus
+          />
+          <div class="login-error"><%= error %></div>
+          <button class="next-btn">Next</button>
+        </form>
+        <button class="forget-pw">Forgot Password?</button>
+        <div class="sign-up">
+          Don't have an account?
+          <a href="/sign-up">Sign Up</a>
+        </div>
       </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>
